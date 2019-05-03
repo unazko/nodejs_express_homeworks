@@ -1,0 +1,4 @@
+{
+	"connectionString": "mongodb://localhost/restApiTask",
+	"port": 5000
+}
