@@ -34,8 +34,11 @@ router.post("/projects", async function(req, res, next) {
 
 router.put("/projects/:id", async function(req, res, next) {
 	try {
-		await Project.findByIdAndUpdate(req.params.id, req.body);
-		const updatedProject = await Project.findById(req.params.id);
+		const updatedProject = await Project.findByIdAndUpdate(
+			req.params.id,
+			req.body,
+			{ runValidators: true, new: true }
+		);
 		res.send(updatedProject);
 	} catch (err) {
 		next(err);

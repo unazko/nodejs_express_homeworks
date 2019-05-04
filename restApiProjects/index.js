@@ -23,7 +23,7 @@ mongoose.connection.once("open", function() {
 	console.log("Connection error", error);
 });
 
-// middleware to anable cross site origin requests
+// middleware to enable cross site origin requests
 app.use(cors({
 	origin: "*",//["http://localhost:5000"],
 	methods: ["GET", "PUT", "POST", "DELETE"],
@@ -39,7 +39,7 @@ app.use("/api", require("./routes/projectRoutes"));
 
 // 404 error handler
 app.use(function(req, res, next) {
-	res.status(404).send({ message: "Route" + req.url + " Not found,"});
+	res.status(404).send({ message: `Route ${req.url} Not found`});
 });
 
 // All error handling middleware
