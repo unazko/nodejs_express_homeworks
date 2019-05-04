@@ -1,0 +1,4 @@
+{
+	"connectionString": "mongodb://localhost/cooking",
+	"port": 5000
+}
