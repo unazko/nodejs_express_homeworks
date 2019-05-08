@@ -36,7 +36,7 @@ const userSchema = new Schema({
 		type: String,
 		validate: {
 			validator: function(url) {
-				return /^(ftp|http|https|data):\/\/[^ "]+$/.test(url);
+				return /^(ftp|http|https|data):[^ "]+$/.test(url);
 			},
 			message: function(props) {
 				return `${props.value} is not a valid URL`;
