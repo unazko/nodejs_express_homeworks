@@ -30,8 +30,7 @@ const recipeSchema = new Schema({
 			// validation function from following address:
 			// https://www.regextester.com/94502
 			validator: function(url) {
-				var pattern = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/mg;
-				return pattern.test(url);
+				return /^(ftp|http|https|data):[^ "]+$/.test(url);
 			},
 			message: function(props) {
 				return `${props.value} is not a valid URL`;
